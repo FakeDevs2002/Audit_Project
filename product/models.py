@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from ckeditor_uploader.fields import RichTextUploadingField
+# from ckeditor_uploader.fields import RichTextUploadingField
+from django_ckeditor_5.fields import CKEditor5Field
 from django.urls import reverse
 
 
@@ -22,7 +23,7 @@ class Product(models.Model):
 
     slug = models.SlugField(_("slug"), max_length=255, unique=True)
     
-    content = RichTextUploadingField(_("content"))
+    content = CKEditor5Field(_("content"), config_name='extends')
     
     image = models.ImageField(_("image"), upload_to="images/")
     

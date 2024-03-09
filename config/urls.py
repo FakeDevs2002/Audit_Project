@@ -21,7 +21,15 @@ from django.conf import settings
 
 
 urlpatterns = [
+    # Django admin urls
     path('admin/', admin.site.urls),
+    
+    # Allauth urls
+    path('accounts/', include('allauth.urls')),
+    
+    # Ckeditor5 urls
+    path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
+
 ]
 
 # serve static and media files from development server
