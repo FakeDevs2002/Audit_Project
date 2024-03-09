@@ -83,6 +83,11 @@ class ProductImages(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        db_table = ''
+        managed = True
+        verbose_name = _('productimage')
+        verbose_name_plural = _('productimages')
 
 
 class Color(models.Model):
@@ -90,6 +95,12 @@ class Color(models.Model):
 
     def __str__(self):
         return self.name
+    
+    class Meta:
+        db_table = ''
+        managed = True
+        verbose_name = _('color')
+        verbose_name_plural = _('colors')
 
 
 class Size(models.Model):
@@ -97,6 +108,12 @@ class Size(models.Model):
 
     def __str__(self):
         return self.name
+    
+    class Meta:
+        db_table = ''
+        managed = True
+        verbose_name = _('size')
+        verbose_name_plural = _('sizes')
 
 
 class Variant(models.Model):

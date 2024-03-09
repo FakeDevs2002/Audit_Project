@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-09 23:08+0330\n"
+"PO-Revision-Date: 2024-03-09 19:36+0000\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\order\admin.py:65
+msgid "# items"
+msgstr "تعداد موارد"
+
+#: .\order\admin.py:80 .\order\models.py:8
+msgid "create_datetime"
+msgstr "تاریخ ایجاد "
+
+#: .\order\apps.py:7
+msgid "Order"
+msgstr "سفارش"
+
+#: .\order\models.py:10
+msgid "is_paid"
+msgstr "پرداخت شده"
+
+#: .\order\models.py:12
+msgid "discount"
+msgstr "تخفیف"
+
+#: .\order\models.py:27 .\order\models.py:32
+msgid "order"
+msgstr "سفارش"
+
+#: .\order\models.py:28
+msgid "orders"
+msgstr "سفارشات"
+
+#: .\order\models.py:34
+msgid "product"
+msgstr "محصول"
+
+#: .\order\models.py:36
+msgid "quantity"
+msgstr "تعداد"
+
+#: .\order\models.py:38
+msgid "price"
+msgstr "قیمت"
+
+#: .\order\models.py:50
+msgid "orderitem"
+msgstr "موارد سفارش"
+
+#: .\order\models.py:51
+msgid "orderitems"
+msgstr "موارد سفارش"

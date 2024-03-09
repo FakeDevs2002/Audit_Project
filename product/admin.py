@@ -44,10 +44,12 @@ class ProductInventoryFilter(admin.SimpleListFilter):
             return queryset.filter(inventory__range = (10, 30))
         if self.value() == ">30":
             return queryset.filter(inventory__gt = 30)
-        
+
+
+@admin_thumbnails.thumbnail('image')
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'slug', 'price', 'status', 'is_active', 'product_images_count_column', 'product_variants_count_column')
+    list_display = ('id', 'image_thumbnail', 'name', 'slug', 'price', 'status', 'is_active', 'product_images_count_column', 'product_variants_count_column')
     
     search_fields = ('name', 'slug', 'content')
     
@@ -114,8 +116,8 @@ class ProductAdmin(admin.ModelAdmin):
         return format_html('<a href="{}" >{}</a>', url, product.product_variants_count)
 
 
-@admin.register(ProductImages)
 @admin_thumbnails.thumbnail('image')
+@admin.register(ProductImages)
 class ProductImagesAdmin(admin.ModelAdmin):
     list_display = ('id', 'image_thumbnail', 'product', 'name', )
     
