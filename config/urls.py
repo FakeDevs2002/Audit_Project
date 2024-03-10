@@ -27,6 +27,9 @@ urlpatterns = [
     # Allauth urls
     path('accounts/', include('allauth.urls')),
     
+    # Product app urls
+    path('', include('product.urls', namespace='product')),
+    
     # Ckeditor5 urls
     path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
 

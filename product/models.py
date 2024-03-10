@@ -8,7 +8,7 @@ from django.urls import reverse
 
 class ProductManager(models.Manager):
     def active_products(self):
-        return self.prefetch_related("comments", "product_images").select_related("category").filter(is_active=True)
+        return self.prefetch_related("product_images").filter(is_active=True).order_by('id')
 
 
 class Product(models.Model):
@@ -27,13 +27,9 @@ class Product(models.Model):
     
     image = models.ImageField(_("image"), upload_to="images/")
     
-    price = models.PositiveIntegerField(_("price"))
+    colors = models.ManyToManyField('Color', related_name='products', verbose_name=_('colors'), blank=True, null=True)
     
-    discount = models.PositiveIntegerField(_("discount"), blank=True, null=True)
-    
-    total_price = models.PositiveIntegerField(_("total_price"))
-    
-    inventory = models.IntegerField(_("inventory"))
+    sizes = models.ManyToManyField('Size', related_name='products', verbose_name=_('sizes'), blank=True, null=True)
     
     datetime_created = models.DateTimeField(_("datetime_created"), auto_now_add=True)
     
@@ -58,30 +54,23 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse("product:product_detail", kwargs={"product_id": self.id})
     
-    @property
-    def total_price(self):
-        """
-            We use this method to calculate the total price if is there any discount for product.
-            and we use this decorator to show this method as attribute for product and django will fill is in database automatically.
-        """
-        if not self.discount :
-            return self.price
-        else:
-            discount_price = (self.discount * self.price) / 100
-            return int(self.price - discount_price)
-        return self.total_price 
+    def colors_to_str(self):
+        return " - ".join([color.name for color in self.colors.all()])
+    colors_to_str.short_description = _('colors')
+    
+    def sizes_to_str(self):
+        return " - ".join([size.name for size in self.sizes.all()])
+    sizes_to_str.short_description = _('sizes')
+
 
 
 
 class ProductImages(models.Model):
     product = models.ForeignKey(Product, verbose_name=_("product"), on_delete=models.CASCADE, related_name="product_images")
 
-    name = models.CharField(_("name"), max_length=200, blank=True, unique=True)
+    number = models.PositiveIntegerField(_("number"),)
 
     image = models.ImageField(_("image"), upload_to="images/")
-
-    def __str__(self):
-        return self.name
 
     class Meta:
         db_table = ''

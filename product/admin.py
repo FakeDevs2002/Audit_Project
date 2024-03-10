@@ -49,13 +49,13 @@ class ProductInventoryFilter(admin.SimpleListFilter):
 @admin_thumbnails.thumbnail('image')
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'image_thumbnail', 'name', 'slug', 'price', 'status', 'is_active', 'product_images_count_column', 'product_variants_count_column')
+    list_display = ('id', 'image_thumbnail', 'name', 'slug', 'sizes_to_str', 'colors_to_str', 'status', 'is_active', 'product_images_count_column', 'product_variants_count_column')
     
     search_fields = ('name', 'slug', 'content')
     
     list_filter = ('status', 'is_active', 'datetime_created', ProductInventoryFilter)
     
-    list_editable = ('price', 'status', 'is_active')
+    list_editable = ('status', 'is_active')
     
     prepopulated_fields = { "slug" : ['name']}
     
@@ -119,13 +119,11 @@ class ProductAdmin(admin.ModelAdmin):
 @admin_thumbnails.thumbnail('image')
 @admin.register(ProductImages)
 class ProductImagesAdmin(admin.ModelAdmin):
-    list_display = ('id', 'image_thumbnail', 'product', 'name', )
+    list_display = ('id', 'image_thumbnail', 'product', 'number', )
     
-    search_fields = ('name', 'product',)
-        
+    search_fields = ('product',)
+    
     list_select_related = ('product',)
-    
-    prepopulated_fields = { "name" : ['product']}
     
     list_per_page = 10
     
@@ -143,7 +141,7 @@ class ProductImagesAdmin(admin.ModelAdmin):
 
 @admin.register(Variant)
 class VariantAdmin(admin.ModelAdmin):
-    list_display = ('id', 'product', 'color', 'size', 'price', 'discount', 'inventory')
+    list_display = ('id', 'product', 'color', 'size', 'price', 'discount', 'inventory', 'total_price')
     
     search_fields = ('product', 'color', 'size')
         
