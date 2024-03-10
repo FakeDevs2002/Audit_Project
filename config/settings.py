@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-import locale
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,7 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Django Apps
-
     "admin_persian",
     'django.contrib.sites',
     'django.contrib.admin',
@@ -135,8 +133,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 # locale
-
-# locale.setlocale(locale.LC_ALL, "Persian_Iran.UTF-8")
 
 LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'fa'

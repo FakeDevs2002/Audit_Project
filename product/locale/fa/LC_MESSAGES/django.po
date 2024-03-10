@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-10 12:33+0330\n"
+"POT-Creation-Date: 2024-03-10 22:12+0330\n"
 "PO-Revision-Date: 2024-03-10 17:59+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,6 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
 #: .\product\admin.py:30
-#| msgid "Product Inventory Filter"
 msgid "Variant Inventory Filter"
 msgstr "موجودی نوع محصول"
 
@@ -77,7 +76,7 @@ msgid "content"
 msgstr "محتوا"
 
 #: .\product\models.py:28 .\product\models.py:73
-#: .\product\templates\product\product_list.html:58
+#: .\product\templates\product\product_list.html:43
 msgid "image"
 msgstr "تصویر"
 
@@ -150,7 +149,6 @@ msgid "variants"
 msgstr "انواع محصولات"
 
 #: .\product\templates\product\product_detail.html:13
-#| msgid "Product"
 msgid "Product Detail"
 msgstr "جزئیات محصول"
 
@@ -175,12 +173,10 @@ msgid "Select size"
 msgstr "اندازه "
 
 #: .\product\templates\product\product_detail.html:184
-#| msgid "colors"
 msgid "Colors"
 msgstr "رنگ ها"
 
 #: .\product\templates\product\product_detail.html:211
-#| msgid "price"
 msgid "Price"
 msgstr "قیمت"
 
@@ -199,35 +195,32 @@ msgid "Add to cart"
 msgstr "اضافه به سبد خرید"
 
 #: .\product\templates\product\product_list.html:9
-#| msgid "products"
 msgid "product list"
 msgstr "لیست محصولات"
 
-#: .\product\templates\product\product_list.html:24
-msgid "Home"
-msgstr "صفحه اصلی"
-
-#: .\product\templates\product\product_list.html:37
-#| msgid "Product"
+#: .\product\templates\product\product_list.html:23
 msgid "Product List"
 msgstr "لیست محصول"
 
-#: .\product\templates\product\product_list.html:43
+#: .\product\templates\product\product_list.html:28
 msgid "Search"
 msgstr "جست و جو"
 
-#: .\product\templates\product\product_list.html:57
+#: .\product\templates\product\product_list.html:42
 msgid "ID"
 msgstr "شناسه"
 
-#: .\product\templates\product\product_list.html:59
+#: .\product\templates\product\product_list.html:44
 msgid "NAME"
 msgstr "نام"
 
-#: .\product\templates\product\product_list.html:60
+#: .\product\templates\product\product_list.html:45
 msgid "COLORS"
 msgstr "رنگ ها"
 
-#: .\product\templates\product\product_list.html:61
+#: .\product\templates\product\product_list.html:46
 msgid "SIZES"
 msgstr "اندازه ها"
+
+#~ msgid "Home"
+#~ msgstr "صفحه اصلی"

@@ -5,11 +5,13 @@ charset-normalizer==3.3.2
 cryptography==42.0.5
 defusedxml==0.7.1
 Django==5.0.3
+django-admin-persian-fonts==0.2
 django-admin-thumbnails==0.2.8
 django-allauth==0.61.1
 django-ckeditor==6.7.1
 django-ckeditor-5==0.2.12
 django-jalali-date==1.1.0
+django-jazzmin==2.6.0
 django-js-asset==2.2.0
 django-rosetta==0.10.0
 idna==3.6
