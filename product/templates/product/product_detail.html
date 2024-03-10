@@ -1,0 +1,255 @@
+{% extends '_base.html' %}
+
+<!-- Django template tags -->
+{% load static %}
+{% load i18n %}
+
+<!-- Third party template tags -->
+{% load thumbnail %}
+
+
+{% block title %}
+
+    {% trans "Product Detail" %}
+
+{% endblock %}
+
+{% block body %}
+
+
+	<div class="breadcumb_area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="bread_box">
+						<ul class="breadcumb">
+							<li><a href="{% url "product:product_list" %}">{% trans "home"%} <span>|</span></a></li>
+							<li><a href="#">{{ product.name }}<span>|</span></a></li>
+							<li><a href="#">{% trans "details"%}<span>|</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<section class="gray_tshirt_area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="gray_tshirt">
+					<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="single_product_image_tab">
+							<div role="tabpanel">
+
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs product_detail_zoom_tab" role="tablist" style="left: 0px; top: 0px;">
+									<li role="presentation" class="active" ><a href="#{{ product.id }}" aria-controls="{{ product.id }}" role="tab" data-toggle="tab">
+										<div class="small_img">
+											{% comment %} {% thumbnail product.image "82x95" crop="center" as im %} {% endcomment %}
+											<img src="{{ product.image.url }}" width="82px" height="95px" alt=""/>
+											{% comment %} {% endthumbnail %} {% endcomment %}
+										</div>
+									</a></li>
+									{% for product_image in product_images %}
+										<li role="presentation" ><a href="#{{ product_image.id }}" aria-controls="{{ product_image.id }}" role="tab" data-toggle="tab">
+											<div class="small_img">
+												{% comment %} {% thumbnail product_image.image "82x95" crop="center" as im %} {% endcomment %}
+												<img src="{{ product_image.image.url }}" width="82px" height="95px" alt=""/>
+												{% comment %} {% endthumbnail %} {% endcomment %}
+											</div>
+										</a></li>
+									{% endfor %}
+								</ul>
+
+								<!-- Tab panes -->
+								<div class="tab-content">
+									<div role="tabpanel" class="tab-pane active " id ="{{ product.id }}" >
+										<div class="single_p_image">
+										{% comment %} {% thumbnail product.image "546x936" as big %}
+										{% thumbnail product.image "346x651" crop="left" as small %} {% endcomment %}
+										{% comment %} <a href="{{ big.url}}" title="look ma!"><img src="{{ small.url }}"></a> {% endcomment %}
+											<a href="{{ product.image.url}}" data-lightbox="image-1" data-title="My caption"><img src="{% static "images/product-plus.png"%}" alt="" /></a>
+											<img id="zoom_00" src="{{ product.image.url }}" data-zoom-image="{{ product.image.url}}" width="346px" height="651px" alt=""/>
+											{% comment %} {% endthumbnail %}
+											{% endthumbnail %} {% endcomment %}
+										</div>
+									</div>
+									{% for product_image in product_images %}
+										<div role="tabpanel" class="tab-pane " id ="{{ product_image.id }}" >
+											<div class="single_p_image">
+											{% comment %} {% thumbnail product_image.image "546x936" as big %}
+											{% thumbnail product_image.image "346x651" crop="left" as small %} {% endcomment %}
+											{% comment %} <a href="{{ big.url}}" title="look ma!"><img src="{{ small.url }}"></a> {% endcomment %}
+												<a href="{{ product_image.image.url}}" data-lightbox="image-1" data-title="My caption"><img src="{% static "images/product-plus.png"%}" alt="" /></a>
+												<img id="zoom_0{{ forloop.counter }}" src="{{ product_image.image.url }}" data-zoom-image="{{ product_image.image.url}}" width="346px" height="651px" alt=""/>
+												{% comment %} {% endthumbnail %}
+												{% endthumbnail %} {% endcomment %}
+											</div>
+										</div>
+									{% endfor %}
+								</div>	
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+					
+						<div class="product_detail_heading">
+							<div class="detail_heading_left">
+								<h3>{{ product.name }}</h3>
+							</div>
+							<div class="detail_heading_right">
+								{% comment %} 
+									<ul id="detail_star">
+										<li><a class="fa fa-star-o red" href=""></a></li>
+										<li><a class="fa fa-star-o red" href=""></a></li>
+										<li><a class="fa fa-star-o red" href=""></a></li>
+										<li><a class="fa fa-star-o" href=""></a></li>
+										<li><a class="fa fa-star-o" href=""></a></li>
+									</ul>
+									<p>(5 Review)</p> 
+								{% endcomment %}
+							</div>
+						</div>
+						
+						<div class="panel-group product_accordion" id="home-accordion-single" role="tablist" aria-multiselectable="true">
+						<div class="panel panel-default product_default">
+							<div class="panel-heading product_accordion_heading" role="tablist" id="headingOneP">
+							<h4 class="panel-title product_accordion_head">
+								<a data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseOneP" aria-expanded="false" aria-controls="collapseOneP">
+									{% trans "Description" %}
+								<span class="floatright"><i class="fa fa-plus"></i></span>
+								</a>
+							</h4>
+							</div>
+							<div id="collapseOneP" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneP">
+								<div class="panel-body product_ac_body">
+								<p>
+									{{ product.content|safe }}
+								</p>
+							</div>
+							</div>
+						</div>
+						<div class="panel panel-default product_default">
+							<div class="panel-heading product_accordion_heading" role="tab" id="headingThreeP">
+								<h4 class="panel-title product_accordion_head">
+							<a class="collapsed" data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseThreeP" aria-expanded="false" aria-controls="collapseThreeP">
+								{% trans "size & fit" %}
+								<span class="floatright"><i class="fa fa-plus"></i></span>
+							</a>
+							</h4>
+							</div>
+							<div id="collapseThreeP" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThreeP">
+								<div class="panel-body product_accordion_head">
+								<div class="single_color">
+									<div class="color_heading">
+										<h5>{% trans "Select size"%}</h5>
+									</div>
+									<form method="post" action=".">
+										{% csrf_token %}
+										<div class="color_detail">
+											<div class="color_size_detail">
+												{% for variant in variant_sizes %}
+													{% comment %} {% if size in variant %} {% endcomment %}
+														<ul id="color_size">
+															<button name="select" type="radio" value="{{ variant.size_id }}"
+																{% if variant_select.size_id == variant.size_id %} checked {% endif %}
+																onchange="this.form.submit();"
+															>
+																<li><a href="">{{ variant.size.name }}</a></li>
+															</button>
+														</ul>
+													{% comment %} {% endif %} {% endcomment %}
+												{% endfor %}	
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="single_color sp_single_col">
+									<div class="color_heading">
+										<h5>{% trans "Colors"%}</h5>
+									</div>
+									<form method="post" action=".">
+										{% csrf_token %}
+										<div class="color_detail">
+											<div class="panel-body colors_cat">
+												{% for variant in variant_colors %}
+													{% comment %} {% if color in variant %} {% endcomment %}
+														<ul id="cat_color">
+															<input name="select" type="radio" value="{{ variant.id }}"
+																{% if variant_select.id == variant.id %} checked {% endif %}
+																onchange="this.form.submit();"
+															>
+															{% comment %} <li><a class="col-7" href="">{{ variant.color.name}}</a></li> {% endcomment %}
+															<li><a href="">{{ variant.color.name}}</a></li>
+														</ul>
+													{% comment %} {% endif %} {% endcomment %}
+												{% endfor %}
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="single_color">
+									<div class="color_heading">
+										<h5>{% trans "Price"%}</h5>
+									</div>
+									<div class="color_detail">
+										{% if variant_select.discount %}
+											<div class="old_price_gray"><p> {% trans "$" %}{{ variant_select.total_price }} </p></div>
+											<div class="new_price_gray"><del> {% trans "$" %}{{ variant_select.price }} </del></div>
+										{% else %}
+											<div class="old_price_gray"><p> {% trans "$" %}{{ variant_select.price }} </p></div>
+										{% endif %}
+									</div>
+								</div>
+								<div class="single_color">
+									<div class="color_heading">
+										<h5>{% trans "Quantity"%}</h5>
+									</div>
+									<div class="color_detail">
+										<div class="size_down">
+											<input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity[113]" max="119" min="0" step="1">
+										</div>
+										<div class="size_cart">
+											<a href="">{% trans "Add to cart"%}</a>
+										</div>
+										<div class="size_heart">
+											<a href=""><img src="{% static "images/Product-Details-heart.png" %}" alt="" /></a>
+										</div>
+										<div class="size_heart">
+											<a href=""><img src="{% static "images/Product-Details-arrow.png" %}" alt="" /></a>
+										</div>
+									</div>
+								</div>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+						
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+    <script>
+        $(function() {
+        $( "#slider-range" ).slider({
+            range: true,
+            min: 150,
+            max: 1500,
+            values: [ 520, 1100 ],
+            slide: function( event, ui ) {
+            $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+            }
+        });
+        $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+            " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+        });
+    </script>
+
+{% endblock %}

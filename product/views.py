@@ -67,3 +67,5 @@ def product_detail_view(request, product_id):
     }
     
     return render(request, 'product/product_detail.html', context)
+
+

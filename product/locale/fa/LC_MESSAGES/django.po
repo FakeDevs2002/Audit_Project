@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-09 23:08+0330\n"
-"PO-Revision-Date: 2024-03-09 19:39+0000\n"
+"POT-Creation-Date: 2024-03-10 12:33+0330\n"
+"PO-Revision-Date: 2024-03-10 17:59+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -20,8 +20,9 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
 #: .\product\admin.py:30
-msgid "Product Inventory Filter"
-msgstr "فیلتر موجودی محصول"
+#| msgid "Product Inventory Filter"
+msgid "Variant Inventory Filter"
+msgstr "موجودی نوع محصول"
 
 #: .\product\admin.py:35
 msgid "low"
@@ -41,7 +42,7 @@ msgstr "تعداد تصاویر"
 
 #: .\product\admin.py:104
 msgid "# variants"
-msgstr "تعداد انواع"
+msgstr "تعداد انواع محصول"
 
 #: .\product\apps.py:7
 msgid "Product"
@@ -51,11 +52,11 @@ msgstr "محصول"
 msgid "none"
 msgstr "هیچ"
 
-#: .\product\models.py:17 .\product\models.py:115 .\product\models.py:124
+#: .\product\models.py:17 .\product\models.py:104 .\product\models.py:113
 msgid "size"
 msgstr "اندازه"
 
-#: .\product\models.py:18 .\product\models.py:102 .\product\models.py:122
+#: .\product\models.py:18 .\product\models.py:91 .\product\models.py:111
 msgid "color"
 msgstr "رنگ"
 
@@ -63,8 +64,7 @@ msgstr "رنگ"
 msgid "both"
 msgstr "رنگ / اندازه"
 
-#: .\product\models.py:22 .\product\models.py:79 .\product\models.py:94
-#: .\product\models.py:107
+#: .\product\models.py:22 .\product\models.py:83 .\product\models.py:96
 msgid "name"
 msgstr "اسم"
 
@@ -76,74 +76,158 @@ msgstr "اسم نشانی"
 msgid "content"
 msgstr "محتوا"
 
-#: .\product\models.py:28 .\product\models.py:81
+#: .\product\models.py:28 .\product\models.py:73
+#: .\product\templates\product\product_list.html:58
 msgid "image"
 msgstr "تصویر"
 
-#: .\product\models.py:30 .\product\models.py:126
-msgid "price"
-msgstr "قیمت"
-
-#: .\product\models.py:32 .\product\models.py:128
-msgid "discount"
-msgstr "تخفیف"
-
-#: .\product\models.py:34 .\product\models.py:130
-msgid "total_price"
-msgstr "قیمت کل"
-
-#: .\product\models.py:36 .\product\models.py:132
-msgid "inventory"
-msgstr "موجودی"
-
-#: .\product\models.py:38
-msgid "datetime_created"
-msgstr "تاریخ ایجاد"
-
-#: .\product\models.py:40
-msgid "datetime_updated"
-msgstr "تاریخ بروزرسانی"
-
-#: .\product\models.py:42
-msgid "status"
-msgstr "وضعیت"
-
-#: .\product\models.py:44
-msgid "is_active"
-msgstr "فعال"
-
-#: .\product\models.py:55 .\product\models.py:77 .\product\models.py:120
-msgid "product"
-msgstr "محصول"
-
-#: .\product\models.py:56
-msgid "products"
-msgstr "محصولات"
-
-#: .\product\models.py:89
-#| msgid "product"
-msgid "productimage"
-msgstr "تصویر محصول"
-
-#: .\product\models.py:90
-#| msgid "products"
-msgid "productimages"
-msgstr "تصاویر محصول"
-
-#: .\product\models.py:103
-#| msgid "color"
+#: .\product\models.py:30 .\product\models.py:59 .\product\models.py:92
 msgid "colors"
 msgstr "رنگ ها"
 
-#: .\product\models.py:116
-#| msgid "size"
+#: .\product\models.py:32 .\product\models.py:63 .\product\models.py:105
 msgid "sizes"
 msgstr "اندازه ها"
 
-#: .\product\models.py:144
-msgid "variant"
-msgstr "گونه"
+#: .\product\models.py:34
+msgid "datetime_created"
+msgstr "تاریخ ایجاد"
 
-#: .\product\models.py:145
+#: .\product\models.py:36
+msgid "datetime_updated"
+msgstr "تاریخ بروزرسانی"
+
+#: .\product\models.py:38
+msgid "status"
+msgstr "وضعیت"
+
+#: .\product\models.py:40
+msgid "is_active"
+msgstr "فعال"
+
+#: .\product\models.py:51 .\product\models.py:69 .\product\models.py:109
+msgid "product"
+msgstr "محصول"
+
+#: .\product\models.py:52
+msgid "products"
+msgstr "محصولات"
+
+#: .\product\models.py:71
+msgid "number"
+msgstr "شماره"
+
+#: .\product\models.py:78
+msgid "productimage"
+msgstr "تصویر محصول"
+
+#: .\product\models.py:79
+msgid "productimages"
+msgstr "تصاویر محصول"
+
+#: .\product\models.py:115
+msgid "price"
+msgstr "قیمت"
+
+#: .\product\models.py:117
+msgid "discount"
+msgstr "تخفیف"
+
+#: .\product\models.py:119
+msgid "total_price"
+msgstr "قیمت کل"
+
+#: .\product\models.py:121
+msgid "inventory"
+msgstr "موجودی"
+
+#: .\product\models.py:133
+msgid "variant"
+msgstr "نوع محصول"
+
+#: .\product\models.py:134
 msgid "variants"
-msgstr "انواع"
+msgstr "انواع محصولات"
+
+#: .\product\templates\product\product_detail.html:13
+#| msgid "Product"
+msgid "Product Detail"
+msgstr "جزئیات محصول"
+
+#: .\product\templates\product\product_detail.html:26
+msgid "home"
+msgstr "صفحه اصلی"
+
+#: .\product\templates\product\product_detail.html:28
+msgid "details"
+msgstr "جزئیات"
+
+#: .\product\templates\product\product_detail.html:132
+msgid "Description"
+msgstr "شرح"
+
+#: .\product\templates\product\product_detail.html:149
+msgid "size & fit"
+msgstr "اندازه و تناسب"
+
+#: .\product\templates\product\product_detail.html:158
+msgid "Select size"
+msgstr "اندازه "
+
+#: .\product\templates\product\product_detail.html:184
+#| msgid "colors"
+msgid "Colors"
+msgstr "رنگ ها"
+
+#: .\product\templates\product\product_detail.html:211
+#| msgid "price"
+msgid "Price"
+msgstr "قیمت"
+
+#: .\product\templates\product\product_detail.html:215
+#: .\product\templates\product\product_detail.html:216
+#: .\product\templates\product\product_detail.html:218
+msgid "$"
+msgstr "تومان"
+
+#: .\product\templates\product\product_detail.html:224
+msgid "Quantity"
+msgstr "تعداد"
+
+#: .\product\templates\product\product_detail.html:231
+msgid "Add to cart"
+msgstr "اضافه به سبد خرید"
+
+#: .\product\templates\product\product_list.html:9
+#| msgid "products"
+msgid "product list"
+msgstr "لیست محصولات"
+
+#: .\product\templates\product\product_list.html:24
+msgid "Home"
+msgstr "صفحه اصلی"
+
+#: .\product\templates\product\product_list.html:37
+#| msgid "Product"
+msgid "Product List"
+msgstr "لیست محصول"
+
+#: .\product\templates\product\product_list.html:43
+msgid "Search"
+msgstr "جست و جو"
+
+#: .\product\templates\product\product_list.html:57
+msgid "ID"
+msgstr "شناسه"
+
+#: .\product\templates\product\product_list.html:59
+msgid "NAME"
+msgstr "نام"
+
+#: .\product\templates\product\product_list.html:60
+msgid "COLORS"
+msgstr "رنگ ها"
+
+#: .\product\templates\product\product_list.html:61
+msgid "SIZES"
+msgstr "اندازه ها"

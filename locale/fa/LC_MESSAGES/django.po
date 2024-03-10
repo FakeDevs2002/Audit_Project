@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-09 23:04+0330\n"
-"PO-Revision-Date: 2024-03-09 18:45+0000\n"
+"POT-Creation-Date: 2024-03-10 12:33+0330\n"
+"PO-Revision-Date: 2024-03-10 09:25+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,6 +18,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\templates\slidebar.html:14
+msgid "Admin"
+msgstr "مدیر"
+
+#: .\templates\slidebar.html:38
+msgid "Dashboard"
+msgstr "داشبورد"
+
+#: .\templates\slidebar.html:46
+msgid "Product List"
+msgstr "لیست محصولات"
+
+#: .\templates\slidebar.html:52
+msgid "Create New Product"
+msgstr "ایجاد محصول جدید"
+
+#: .\templates\slidebar.html:58
+msgid "Dashboard v3"
+msgstr ""
+
+#: .\templates\slidebar.html:67
+msgid "Profile"
+msgstr "مشخصات"
+
+#: .\templates\slidebar.html:75
+msgid "User List"
+msgstr "فهرست کاربران"
+
+#: .\templates\slidebar.html:81
+msgid "Create New User"
+msgstr "ساخت کاربر جدید"
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"
@@ -78,8 +110,8 @@ msgstr "یک \"Slug\" معتبر متشکل از حروف، اعداد، زیر�
 
 #: .\venv\Lib\site-packages\django\core\validators.py:267
 msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
 msgstr ""
 "یک \"Slug\" معتبر متشکل از حروف یونیکد، اعداد، زیرخط یا خط تیره وارد کنید."
 
@@ -287,7 +319,8 @@ msgid ""
 "“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
 "format."
 msgstr ""
-"مقدار «%(value)s» دارای قالب تاریخ نامعتبر است. باید در قالب YYYY-MM-DD باشد."
+"مقدار «%(value)s» دارای قالب تاریخ نامعتبر است. باید در قالب YYYY-MM-DD "
+"باشد."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1419
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1554
@@ -305,20 +338,20 @@ msgstr "تاریخ (بدون زمان)"
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1550
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
 msgstr ""
-"مقدار «%(value)s» دارای قالب نامعتبر است. باید در قالب YYYY-MM-DD HH:MM[:ss[."
-"uuuuu]][TZ] باشد."
+"مقدار «%(value)s» دارای قالب نامعتبر است. باید در قالب YYYY-MM-DD "
+"HH:MM[:ss[.uuuuu]][TZ] باشد."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1558
 #, python-format
 msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
 msgstr ""
-"مقدار \"%(value)s\" قالب صحیحی دارد (YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]) اما "
-"تاریخ/زمان نامعتبر است."
+"مقدار \"%(value)s\" قالب صحیحی دارد (YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]) اما"
+" تاریخ/زمان نامعتبر است."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1563
 msgid "Date (with time)"
@@ -336,11 +369,11 @@ msgstr "عدد اعشاری"
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1853
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
-"uuuuuu] format."
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
 msgstr ""
-"مقدار «%(value)s» دارای قالب نامعتبر است. باید در قالب [DD] [[HH:]MM:]ss[."
-"uuuuuu] باشد."
+"مقدار «%(value)s» دارای قالب نامعتبر است. باید در قالب [DD] "
+"[[HH:]MM:]ss[.uuuuuu] باشد."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1857
 msgid "Duration"
@@ -490,7 +523,7 @@ msgstr "رابطه یک به یک"
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:1292
 #, python-format
 msgid "%(from)s-%(to)s relationship"
-msgstr ""
+msgstr "رابطه %(from)s-%(to)s"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:1294
 #, python-format
@@ -502,7 +535,8 @@ msgid "Many-to-many relationship"
 msgstr "رابطه چند به چند"
 
 #. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
+#. characters will prevent the default label_suffix to be appended to the
+#. label
 #: .\venv\Lib\site-packages\django\forms\boundfield.py:185
 msgid ":?.!"
 msgstr ":?.!"
@@ -552,15 +586,16 @@ msgstr "فایل ارسالی خالی است"
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:633
 #, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
-"مطمئن شوید که این نام فایل حداکثر %(max)d نویسه داشته باشد (دارای %(length)d "
-"باشد)."
+"مطمئن شوید که این نام فایل حداکثر %(max)d نویسه داشته باشد (دارای %(length)d"
+" باشد)."
 msgstr[1] ""
-"مطمئن شوید که این نام فایل حداکثر %(max)d نویسه داشته باشد (دارای %(length)d "
-"باشد)."
+"مطمئن شوید که این نام فایل حداکثر %(max)d نویسه داشته باشد (دارای %(length)d"
+" باشد)."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:638
 msgid "Please either submit a file or check the clear checkbox, not both."
@@ -616,8 +651,8 @@ msgid ""
 "%(field_names)s. You may need to file a bug report if the issue persists."
 msgstr ""
 "داده های ManagementForm وجود ندارد یا دستکاری شده است. فیلدهای از دست رفته: "
-"%(field_names)s. اگر مشکل همچنان ادامه داشت، ممکن است لازم باشد یک گزارش باگ "
-"ارسال کنید."
+"%(field_names)s. اگر مشکل همچنان ادامه داشت، ممکن است لازم باشد یک گزارش باگ"
+" ارسال کنید."
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:65
 #, python-format
@@ -659,8 +694,8 @@ msgid ""
 "Please correct the duplicate data for %(field_name)s which must be unique "
 "for the %(lookup)s in %(date_field)s."
 msgstr ""
-"لطفاً داده‌های تکراری %(field_name)s را تصحیح کنید که باید برای %(lookup)s در "
-"%(date_field)s منحصر به فرد باشد."
+"لطفاً داده‌های تکراری %(field_name)s را تصحیح کنید که باید برای %(lookup)s "
+"در %(date_field)s منحصر به فرد باشد."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:920
 msgid "Please correct the duplicate values below."
@@ -671,7 +706,8 @@ msgid "The inline value did not match the parent instance."
 msgstr "مقدار درون خطی با نمونه والد مطابقت نداشت."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1448
-msgid "Select a valid choice. That choice is not one of the available choices."
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
 msgstr "یک انتخاب معتبر انتخاب کنید. آن انتخاب یکی از گزینه های موجود نیست."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1587
@@ -685,8 +721,8 @@ msgid ""
 "%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
 "may be ambiguous or it may not exist."
 msgstr ""
-"%(datetime)s را نمی توان در منطقه زمانی %(current_timezone)s تفسیر کرد. ممکن "
-"است مبهم باشد یا وجود نداشته باشد."
+"%(datetime)s را نمی توان در منطقه زمانی %(current_timezone)s تفسیر کرد. ممکن"
+" است مبهم باشد یا وجود نداشته باشد."
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:461
 msgid "Clear"
@@ -1134,23 +1170,23 @@ msgid ""
 "enable them, at least for this site, or for HTTPS connections, or for “same-"
 "origin” requests."
 msgstr ""
-"اگر مرورگر خود را طوری پیکربندی کرده‌اید که سرصفحه‌های «ارجاع‌کننده» را غیرفعال "
-"کند، لطفاً آنها را حداقل برای این سایت یا برای اتصالات HTTPS یا برای "
-"درخواست‌های «هم منبع» دوباره فعال کنید."
+"اگر مرورگر خود را طوری پیکربندی کرده‌اید که سرصفحه‌های «ارجاع‌کننده» را "
+"غیرفعال کند، لطفاً آنها را حداقل برای این سایت یا برای اتصالات HTTPS یا برای"
+" درخواست‌های «هم منبع» دوباره فعال کنید."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:45
 msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the “Referrer-Policy: no-referrer” header, please remove them. The "
-"CSRF protection requires the “Referer” header to do strict referer checking. "
-"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
-"\" …> for links to third-party sites."
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
 "اگر از تگ <meta name=\"referrer\" content=\"no-referrer\"> استفاده می کنید "
-"یا از هدر \"Referrer-Policy: no-referrer\" استفاده می کنید، لطفاً آنها را حذف "
-"کنید. حفاظت CSRF به هدر \"مرجع\" برای بررسی دقیق ارجاع نیاز دارد. اگر نگران "
-"حریم خصوصی هستید، از گزینه‌های جایگزین مانند <a rel=\"noreferrer\"…> برای "
-"پیوند به سایت‌های شخص ثالث استفاده کنید."
+"یا از هدر \"Referrer-Policy: no-referrer\" استفاده می کنید، لطفاً آنها را "
+"حذف کنید. حفاظت CSRF به هدر \"مرجع\" برای بررسی دقیق ارجاع نیاز دارد. اگر "
+"نگران حریم خصوصی هستید، از گزینه‌های جایگزین مانند <a rel=\"noreferrer\"…> "
+"برای پیوند به سایت‌های شخص ثالث استفاده کنید."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:54
 msgid ""
@@ -1167,8 +1203,9 @@ msgid ""
 "If you have configured your browser to disable cookies, please re-enable "
 "them, at least for this site, or for “same-origin” requests."
 msgstr ""
-"اگر مرورگر خود را طوری پیکربندی کرده‌اید که کوکی‌ها را غیرفعال کند، لطفاً آن‌ها "
-"را مجدداً فعال کنید، حداقل برای این سایت، یا برای درخواست‌های «هم منبع»."
+"اگر مرورگر خود را طوری پیکربندی کرده‌اید که کوکی‌ها را غیرفعال کند، لطفاً "
+"آن‌ها را مجدداً فعال کنید، حداقل برای این سایت، یا برای درخواست‌های «هم "
+"منبع»."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:66
 msgid "More information is available with DEBUG=True."
@@ -1205,8 +1242,8 @@ msgstr "هیچ %(verbose_name_plural)s موجود نیست"
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:652
 #, python-format
 msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
 msgstr ""
 "آینده %(verbose_name_plural)s موجود نیست زیرا %(class_name)s.allow_future "
 "نادرست است."
@@ -1263,20 +1300,21 @@ msgid ""
 "target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
 msgstr ""
 "مشاهده <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-"target=\"_blank\" rel=\"noopener\">یادداشت‌های انتشار</a> برای جنگو %(نسخه) س"
+"target=\"_blank\" rel=\"noopener\">یادداشت‌های انتشار</a> برای جنگو %(نسخه) "
+"س"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:221
 #, python-format
 msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
 msgstr ""
-"شما این صفحه را می بینید زیرا <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True </a> در فایل تنظیمات شما قرار دارد و شما هیچ URL را پیکربندی "
-"نکرده اید."
+"شما این صفحه را می بینید زیرا <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True </a> در فایل تنظیمات شما قرار "
+"دارد و شما هیچ URL را پیکربندی نکرده اید."
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:229
 msgid "Django Documentation"

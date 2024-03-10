@@ -27,6 +27,48 @@
         <link rel="stylesheet" href="{% static "dist/css/adminlte.min.css"%}">
         <!-- Google Font: Source Sans Pro -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+            
+        <link rel="stylesheet" href="">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'><link rel="stylesheet" href="{% static "account/dist/style.css"%}">
+    
+        <!-- fonts files -->
+        <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        
+        
+        <!-- Font awesome css -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        
+        <!-- Owl carousel css -->
+        <link rel="stylesheet" href="{% static "css/owl.carousel.css"%}">
+        <link rel="stylesheet" href="{% static "css/owl.transitions.css"%}">
+        <link rel="stylesheet" href="{% static "css/owl.theme.css"%}">
+        
+        <!-- bx-slider css -->
+        <link rel="stylesheet" href="{% static "css/jquery.bxslider.css"%}">
+        
+        <!-- bootstrap select css -->
+        <link rel="stylesheet" href="{% static "css/bootstrap-select.min.css"%}">
+        
+        <!-- lightbox css -->
+        <link rel="stylesheet" href="{% static "css/lightbox.css"%}">
+        
+        <!-- Revolution slider css -->
+        <link href="{% static "js/rs-plugin/css/settings.css"%}" rel="stylesheet" />
+        
+        <!-- Bootstrap css -->
+        <link rel="stylesheet" href="{% static "css/bootstrap.css"%}">
+        
+        <!-- Custom css -->
+        <link rel="stylesheet" href="{% static "css/style.css"%}">
+        <link rel="stylesheet" href="{% static "css/responsive.css"%}">
+
+        <!-- Favicons -->
+        <link rel="apple-touch-icon-precomposed" href="{% static "images/apple-touch-icon-precomposed.png"%}">
+        <link rel="shortcut icon" type="image/ico" href="{% static "images/favicon.ico" %}"/>
+
     </head>
     <body class="hold-transition sidebar-mini sidebar-collapse">
         
@@ -34,7 +76,7 @@
         
         {% block body %}{% endblock%}
 
-        {% include "footer.html" %}
+        {% comment %} {% include "footer.html" %} {% endcomment %}
 
         <!-- jQuery -->
         <script src="{% static "plugins/jquery/jquery.min.js"%}"></script>
@@ -70,6 +112,74 @@
             });
         });
         </script>
-        <script src="" async defer></script>
-    </body>
+        <!-- JS Files -->
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script>
+        $(function() {
+            $( "#slider-range" ).slider({
+            range: true,
+            min: 150,
+            max: 1500,
+            values: [ 520, 1100 ],
+            slide: function( event, ui ) {
+                $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+            }
+            });
+            $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+            " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+        });
+        </script>
+	  
+        <script src="{% static "js/owl.carousel.min.js"%}"></script>
+        <script src="{% static "js/lightbox.min.js"%}"></script>
+        <script src="{% static "js/jquery.elevatezoom.js"%}"></script>
+        <script src="{% static "js/jquery.bxslider.min.js"%}"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            $('.slider8').bxSlider({
+                mode: 'vertical',
+                slideWidth: 300,
+                minSlides: 3,
+                slideMargin: 10
+            });
+            $('.slider9').bxSlider({
+                mode: 'vertical',
+                slideWidth: 300,
+                minSlides: 3,
+                slideMargin: 10
+            });
+            $('.slider10').bxSlider({
+                mode: 'vertical',
+                slideWidth: 300,
+                minSlides: 3,
+                slideMargin: 10
+            });
+            });
+        </script>
+        <script src="{% static "js/bootstrap-select.min.js"%}"></script>
+        <script src="{% static "js/rs-plugin/js/jquery.themepunch.plugins.min.js"%}"></script>
+        <script src="{% static "js/rs-plugin/js/jquery.themepunch.revolution.min.js"%}"></script>
+        <script src="{% static "js/rs-plugin/rs.home.js"%}"></script>
+        <script src="{% static "js/bootstrap.min.js"%}"></script>
+        <!--Opacity & Other IE fix for older browser-->
+        <!--[if lte IE 8]>
+            <script type="text/javascript" src="js/ie-opacity-polyfill.js"></script>
+        <![endif]-->
+        <script src="{% static "js/main.js"%}"></script>
+
+        <script>
+        $(function() {
+            $( "#slider-range" ).slider({
+            range: true,
+            min: 150,
+            max: 1500,
+            values: [ 520, 1100 ],
+            slide: function( event, ui ) {
+                $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+            }
+            });
+            $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+            " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+        });    </body>
 </html>

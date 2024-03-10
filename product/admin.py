@@ -23,11 +23,11 @@ class VariantInline(admin.TabularInline):
     model = Variant
     extra = 1
 
-class ProductInventoryFilter(admin.SimpleListFilter):
+class VariantInventoryFilter(admin.SimpleListFilter):
     """
-        We use this class to make our custom filter about product inventory.
+        We use this class to make our custom filter about Variant inventory.
     """
-    title = _('Product Inventory Filter')
+    title = _('Variant Inventory Filter')
     parameter_name = "inventory"
     
     def lookups(self, request: Any, model_admin: Any) -> list[tuple[Any, str]]:
@@ -53,7 +53,7 @@ class ProductAdmin(admin.ModelAdmin):
     
     search_fields = ('name', 'slug', 'content')
     
-    list_filter = ('status', 'is_active', 'datetime_created', ProductInventoryFilter)
+    list_filter = ('status', 'is_active', 'datetime_created')
     
     list_editable = ('status', 'is_active')
     
@@ -144,6 +144,8 @@ class VariantAdmin(admin.ModelAdmin):
     list_display = ('id', 'product', 'color', 'size', 'price', 'discount', 'inventory', 'total_price')
     
     search_fields = ('product', 'color', 'size')
+    
+    list_filter = ('product', VariantInventoryFilter,)
         
     list_select_related = ('product', 'color', 'size')
         
@@ -157,7 +159,7 @@ class VariantAdmin(admin.ModelAdmin):
         """
         if key in ('product'):
             return True
-        return super(ProductAdmin, self).lookup_allowed(key, value)
+        return super().lookup_allowed(key, value)
 
 
 @admin.register(Color)
